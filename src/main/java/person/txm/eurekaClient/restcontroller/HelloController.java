@@ -26,6 +26,7 @@ public class HelloController {
 		System.out.println("hello:"+instance.getPort());
 		int sleepTime = new Random().nextInt(3000);
 		System.out.println(sleepTime);
+		
 		try {
 			Thread.sleep(sleepTime);
 		} catch (InterruptedException e) {
