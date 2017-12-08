@@ -13,8 +13,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
 @RequestMapping("/test")
+@Slf4j
 public class HelloController {
 
 	@Autowired
@@ -22,15 +25,16 @@ public class HelloController {
 	
 	@RequestMapping("/hello")
 	public Object hello(@RequestBody Map<String, Object> params){
-		ServiceInstance instance = client.getLocalServiceInstance();
-		System.out.println("hello:"+instance.getPort());
-		int sleepTime = new Random().nextInt(3000);
-		System.out.println(sleepTime);
-		
-		try {
-			Thread.sleep(sleepTime);
-		} catch (InterruptedException e) {
-		}
+//		ServiceInstance instance = client.getLocalServiceInstance();
+//		System.out.println("hello:"+instance.getPort());
+//		int sleepTime = new Random().nextInt(3000);
+//		System.out.println(sleepTime);
+//		
+//		try {
+//			Thread.sleep(sleepTime*10);
+//		} catch (InterruptedException e) {
+//		}
+		log.info("eurekaclient controller test ===");
 		Map<String, Object> result = new HashMap<String, Object>();
 		result.put("res1", "v1");
 		result.put("res2", "v2");
